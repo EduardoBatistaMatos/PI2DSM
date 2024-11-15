@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ad945e; 
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            background-color: yellow;
+            padding: 20px;
+                    
+        }
+
+        h1 {
+        font-size: 36px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        color: rgb(73, 59, 29);
+        margin: 0;
+        
+        }
+
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            background-color: rgb(243, 245, 157); 
+            padding: 5px 20px; 
+        }
+
+
+        .nav-left {
+            display: flex;
+            gap: 30px; 
+        }
+        .icon {
+            color: black; 
+            text-decoration: none;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+        .container {
+            background-color: beige;
+            padding: 40px; 
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px; 
+            margin: 50px auto; 
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #e6e6fa; 
+            font-size: 16px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50; 
+            color: black; 
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049; 
+        }
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        h2 {
+            color: black; 
+        }
+        footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
+    z-index: 10; 
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Auto Feed</h1>
+    
+</header>
+
+<div class="nav-bar">
+    <nav class="nav-left">
+                       
+        
+    </nav>
+    <div class="nav-right">
+        <a href="/" class="icon">Login</a>                        
+
+    </div>
+</div>
+
+<div class="container">
+    <h2>Criar Conta</h2>
+    <form action="criarConta" method="post">
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" placeholder="Nome completo" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Idade:</label>
+            <input type="number" id="age" name="age" placeholder="Idade" required>
+        </div>
+        <div class="form-group">
+            <label for="new-username">Usuário:</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Usuário" required>
+        </div>
+        <div class="form-group">
+            <label for="new-password">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm-password">Confirmar Senha:</label>
+            <input type="password" id="confirma" name="confirma" placeholder="Confirmar Senha" required>
+        </div>
+        
+        <button type="submit" class="btn" onclick="valida(event)">Registrar</button>
+        
+        <script>
+            function valida(event) {
+                var s = document.getElementById('senha').value;
+                var c = document.getElementById('confirma').value;
+        
+                if (s !== c) {
+                    event.preventDefault(); // Previne o envio do formulário
+                    window.alert("A senha digitada no campo de confirmação é diferente da senha digitada");
+                }
+            }
+        </script>
+               
+    </form>
+    <div class="link">                  
+        <p>Já tem uma conta? <a href="/">Fazer login</a></p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Auto Feed. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
