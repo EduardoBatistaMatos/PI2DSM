@@ -7,14 +7,14 @@ app.use(bodyParser.json());
 
 
 // Importa as rotas 
-const consultaRoutes = require('./api/routes/consultaRoutes');
-const empresasRoutes = require('./api/routes/empresasRoutes');
-const sobreRoutes = require('./api/routes/sobreRoutes');
-const contatoRoutes = require('./api/routes/contatoRoutes');
-const criarcontaRoutes = require('./api/routes/criarcontaRoutes');
-const feedbacksRoutes = require('./api/routes/feedbacksRoutes');
-const loginRoutes = require('./api/routes/loginRoutes');
-const index = require('./api/routes/indexRoutes');
+const consultaRoutes = require('./routes/consultaRoutes');
+const empresasRoutes = require('./routes/empresasRoutes');
+const sobreRoutes = require('./routes/sobreRoutes');
+const contatoRoutes = require('./routes/contatoRoutes');
+const criarcontaRoutes = require('./routes/criarcontaRoutes');
+const feedbacksRoutes = require('./routes/feedbacksRoutes');
+const loginRoutes = require('./routes/loginRoutes');
+const index = require('./routes/indexRoutes');
 
 
 // Configura o aplicativo para usar JSON nos corpos das requisições
@@ -24,7 +24,7 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 
 // Define o diretório onde as views estão localizadas
-app.set('views', './api/views');
+app.set('views', './views');
 
 // Define a porta em que o servidor irá escutar
 const port = 3000;
@@ -54,7 +54,7 @@ app.listen(port, () => {
 
 
 // Importa a configuração de conexão com o banco de dados
-const conexao = require("./api/config/conexao");
+const conexao = require("./config/conexao");
 
 
 // Exporta a instância do aplicativo para ser usada em outros módulos
