@@ -43,7 +43,7 @@ function criarConta(req, res) {
             console.log("Dados Inválidos!!!");
             res.render("login.ejs", {
                 title: "Login",
-                mensagem: "Dados Inválidos"
+                mensagem: "Senha do Usuário"
             });
         }
     });
