@@ -14,7 +14,7 @@ const contatoRoutes = require('./routes/contatoRoutes');
 const criarcontaRoutes = require('./routes/criarcontaRoutes');
 const feedbacksRoutes = require('./routes/feedbacksRoutes');
 const loginRoutes = require('./routes/loginRoutes');
-const index = require('./routes/indexRoutes');
+const indexRoutes = require('./routes/indexRoutes');
 
 
 // Configura o aplicativo para usar JSON nos corpos das requisições
@@ -45,7 +45,7 @@ app.use('/contato' ,contatoRoutes);
 app.use('/criarconta' ,criarcontaRoutes);
 app.use('/feedbacks' ,feedbacksRoutes);
 app.use("/", loginRoutes);
-app.use("/", index);
+app.use("/", indexRoutes);
 
 // Inicia o servidor e faz com que ele escute na porta definida
 app.listen(port, () => {
